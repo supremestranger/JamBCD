@@ -1,0 +1,9 @@
+jambcd-unity/.idea
+jambcd-unity/UserSettings
+jambcd-unity/Library
+jambcd-unity/Logs
+jambcd-unity/Temp
+jambcd-unity/obj
+*.csproj
+*.sln
+*DS_Store
