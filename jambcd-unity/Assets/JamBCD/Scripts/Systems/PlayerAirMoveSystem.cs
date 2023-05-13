@@ -18,7 +18,7 @@ namespace JamBCD
                 
                 if (player.WantDash && player.MoveDir != Vector3.zero)
                 {
-                    player.TargetFOV= 80f;
+                    player.TargetFOV= _config.DashFOV;
                     ref var dashing = ref filter.GetEntity(i).Get<Dashing>();
                     dashing.DashingElapsed = _config.DashDuration;
                     filter.GetEntity(i).Get<Dashing>().DashDir = player.MoveDir;
@@ -33,7 +33,10 @@ namespace JamBCD
                 //     verticalVelocity = -1 * Mathf.Abs(verticalVelocity);
                 // }
                 var horizontalVelocity = Vector3.ProjectOnPlane(player.CharacterVelocity, Vector3.up);
-                horizontalVelocity = Vector3.ClampMagnitude(horizontalVelocity, player.CurrentMaxSpeedInAir);
+                if (filter.GetEntity(i).Has<InputControl>())
+                {
+                    horizontalVelocity = Vector3.ClampMagnitude(horizontalVelocity, player.CurrentMaxSpeedInAir);
+                }
                 player.CharacterVelocity = horizontalVelocity + (Vector3.up * verticalVelocity);
                 player.CharacterVelocity += new Vector3(0f, player.GravitationalAcceleration * Time.deltaTime, 0f);
             }

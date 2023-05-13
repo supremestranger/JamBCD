@@ -18,5 +18,6 @@ namespace JamBCD
         public float GravitationalAcceleration;
         public float JumpHeight;
         public float GroundAcceleration;
+        public float DashFOV;
     }
 }
