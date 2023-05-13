@@ -6,6 +6,9 @@ namespace JamBCD
     {
         public CharacterController Controller;
         public Transform Transform;
+        public Transform GroundCheckPoint;
+        private Collider[] _results = new Collider[16];
+        [SerializeField] private LayerMask _groundLayerMask;
 
         private void Awake()
         {
@@ -15,7 +18,7 @@ namespace JamBCD
 
         public bool IsGrounded()
         {
-            return Controller.isGrounded;
+            return Physics.OverlapSphereNonAlloc(GroundCheckPoint.position, 0.25f, _results, _groundLayerMask) != 0;
         }
     }
 }

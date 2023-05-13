@@ -12,7 +12,7 @@ namespace JamBCD {
                 ref var player = ref filter.Get1(i);
 
                 if (player.WantDash && player.MoveDir != Vector3.zero) {
-                    player.TargetFOV = 80f;
+                    player.TargetFOV = _config.DashFOV;
                     ref var dashing = ref filter.GetEntity(i).Get<Dashing>();
                     dashing.DashingElapsed = _config.DashDuration;
                     filter.GetEntity(i).Get<Dashing>().DashDir = player.MoveDir;
@@ -21,7 +21,7 @@ namespace JamBCD {
 
                  
                 if (player.MoveDir == Vector3.zero) {
-                    if ((Vector3.zero - player.CharacterVelocity).sqrMagnitude <= 0.01f) {
+                    if ((Vector3.zero - player.CharacterVelocity).sqrMagnitude <= 0.2f) {
                         player.CharacterVelocity = Vector3.zero;
                         continue;
                     }

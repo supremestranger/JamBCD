@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: Configuration
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 5177478882753262803, guid: 5f5dd129014a30644ad6c9b0002868f7, type: 3}
-  DashDuration: 0.3
-  BaseSpeedOnGround: 8
+  DashDuration: 0.2
+  BaseSpeedOnGround: 12
   CameraZRot: 3
   MouseSensitivity: 3
   AirAcceleration: 4
-  DashSpeed: 40
+  DashSpeed: 50
   MaxSpeedInAir: 20
   SlideSpeed: 3
-  GravitationalAcceleration: -25
-  JumpHeight: 4
+  GravitationalAcceleration: -40
+  JumpHeight: 2
   GroundAcceleration: 50
+  DashFOV: 100

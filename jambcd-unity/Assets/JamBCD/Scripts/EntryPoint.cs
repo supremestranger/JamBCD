@@ -37,6 +37,7 @@ namespace JamBCD
                 .Add(new PlayerDashingSystem())
                 .Add(new PlayerJumpSystem())
                 .Add(new PlayerChangeHeightSystem())
+                .Add(new DrunkCameraShakeSystem())
                 // register your systems here, for example:
                 // .Add (new TestSystem1 ())
                 // .Add (new TestSystem2 ())
