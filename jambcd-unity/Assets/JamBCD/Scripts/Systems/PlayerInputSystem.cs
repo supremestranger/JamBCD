@@ -11,7 +11,6 @@ namespace JamBCD {
 
                 player.MoveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, (Input.GetAxisRaw("Vertical")));
                 player.WantCrouch = Input.GetKey(KeyCode.LeftControl);
-                player.WantSlide = Input.GetKeyDown(KeyCode.LeftAlt);
                 player.FireInputDown = Input.GetMouseButtonDown(0);
                 player.WantJump = Input.GetKeyDown(KeyCode.Space);
                 player.WantDash = Input.GetKeyDown(KeyCode.LeftShift);

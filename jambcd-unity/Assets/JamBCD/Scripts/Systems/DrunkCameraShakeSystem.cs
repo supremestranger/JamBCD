@@ -5,6 +5,8 @@ namespace JamBCD
 {
     public class DrunkCameraShakeSystem : IEcsRunSystem
     {
+        private EcsFilter<TryDrink> _events;
+        private RuntimeData _runtimeData;
         private CameraService _cameraService;
         
         private float _drunk;
@@ -12,8 +14,9 @@ namespace JamBCD
 
         public void Run()
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (!_events.IsEmpty() && _runtimeData.BuffCount > 0)
             {
+                _runtimeData.BuffCount--;
                 _drunk += 5f;
             }
             
