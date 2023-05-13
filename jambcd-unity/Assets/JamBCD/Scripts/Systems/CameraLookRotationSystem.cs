@@ -19,13 +19,10 @@ namespace JamBCD
 
                 _cameraService.VirtualCamera.m_Lens.FieldOfView = Mathf.Lerp(_cameraService.MainCamera.fieldOfView, player.TargetFOV, 5f * Time.deltaTime); // todo remove hardcode
                 
-                _cameraService.CameraHorizontalAngle += player.MouseX * player.MouseSensitivity;
                 
                 //player.PlayerView.transform.localRotation = Quaternion.Slerp(player.PlayerView.Transform.localRotation, 
                 //Quaternion.Euler(0f, _cameraService.CameraHorizontalAngle, 0f), 12 * Time.deltaTime);
                 
-                _cameraService.CameraVerticalAngle += -player.MouseY * player.MouseSensitivity;
-                _cameraService.CameraVerticalAngle = Mathf.Clamp(_cameraService.CameraVerticalAngle, -80f, 80f);
                 var camForward = _cameraService.MainCamera.transform.forward;
                 camForward.y = 0f;
                 player.PlayerView.Transform.forward = camForward;

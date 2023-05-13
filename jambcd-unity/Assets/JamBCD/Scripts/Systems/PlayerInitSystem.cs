@@ -4,15 +4,15 @@ namespace JamBCD
 {
     public class PlayerInitSystem : IEcsInitSystem
     {
-        private Configuration config;
-        private SceneData sceneData;
-        private EcsWorld ecsWorld;
-        private RuntimeData runtimeData;
+        private Configuration _config;
+        private SceneData _sceneData;
+        private EcsWorld _world;
+        private RuntimeData _runtimeData;
         private CameraService _cameraService;
         
         public void Init()
         {
-            var playerEntity = ecsWorld.NewEntity();
+            var playerEntity = _world.NewEntity();
             
             ref var player = ref playerEntity.Get<Player>();
             ref var inputControl = ref playerEntity.Get<InputControl>();
@@ -20,21 +20,21 @@ namespace JamBCD
             //runtimeData.playerTransform = sceneData.playerGameObject.transform;
             //runtimeData.playerEntity = playerEntity;
             
-            player.PlayerView = sceneData.PlayerGO.GetComponent<PlayerView>();
-            player.MouseSensitivity = config.MouseSensitivity;
-            _cameraService.CameraZRot = config.CameraZRot;
+            player.PlayerView = _sceneData.PlayerView;
+            player.PlayerView.World = _world;
+            _cameraService.CameraZRot = _config.CameraZRot;
             //player.bunnyHoopInterval = staticData.bunnyHoopInterval;
             //player.baseMaxSpeedOnGround = config.BaseSpeedOnGround;
-            player.CurrentMaxSpeedOnGround = config.BaseSpeedOnGround;
+            player.CurrentMaxSpeedOnGround = _config.BaseSpeedOnGround;
             //player.SlowAirAcceleration = staticData.slowAirAcceleration;
             //player.baseAirAcceleration = staticData.baseAirAcceleration;
             //player.baseMaxSpeedInAir = config.baseMaxSpeedInAir;
-            player.CurrentAirAcceleration = config.AirAcceleration;
-            player.DashSpeed = config.DashSpeed;
-            player.CurrentMaxSpeedInAir = config.MaxSpeedInAir;
-            player.GravitationalAcceleration = config.GravitationalAcceleration;
-            player.JumpHeight = config.JumpHeight;
-            player.GroundAcceleration = config.GroundAcceleration;
+            player.CurrentAirAcceleration = _config.AirAcceleration;
+            player.DashSpeed = _config.DashSpeed;
+            player.CurrentMaxSpeedInAir = _config.MaxSpeedInAir;
+            player.GravitationalAcceleration = _config.GravitationalAcceleration;
+            player.JumpHeight = _config.JumpHeight;
+            player.GroundAcceleration = _config.GroundAcceleration;
             player.TargetFOV = 60f;
         }
     }

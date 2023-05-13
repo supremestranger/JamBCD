@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5519672525803808988}
-  m_LocalRotation: {x: -0.033393368, y: 0.6485277, z: -0.02833645, w: -0.75993013}
+  m_LocalRotation: {x: 0.03339113, y: -0.6485291, z: 0.028336197, w: 0.759929}
   m_LocalPosition: {x: -0.44, y: 2.999999, z: 3.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32,7 +32,7 @@ Transform:
   - {fileID: 1966554455811634511}
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.02, y: -80.956, z: -0.014}
 --- !u!114 &6978038053070019594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.05
-    m_DecelTime: 0.1
+    m_DecelTime: 0.05
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
     m_InvertInput: 1
@@ -174,7 +174,7 @@ MonoBehaviour:
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.05
-    m_DecelTime: 0.1
+    m_DecelTime: 0.05
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
     m_InvertInput: 0

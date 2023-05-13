@@ -20,6 +20,11 @@ namespace JamBCD {
                 if (player.WantJump) {
                     filter.GetEntity(i).Get<TryJump>().Timer = 0.2f;
                 }
+
+                if (player.WantDrink)
+                {
+                    filter.GetEntity(i).Get<TryDrink>();
+                }
             }
         }
     }

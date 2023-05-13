@@ -12,7 +12,6 @@ namespace JamBCD
         public float CurrentMaxSpeedInAir;
         public float GravitationalAcceleration;
         public float GroundAcceleration;
-        public float MouseSensitivity;
         public float CurrentAirAcceleration;
         public float JumpHeight;
         public float DashSpeed;
@@ -21,11 +20,11 @@ namespace JamBCD
         public bool WantDash;
         public Vector3 MoveInput;
         public bool WantCrouch;
-        public bool WantSlide;
         public bool FireInputDown;
         public bool WantJump;
         public float MouseX;
         public float MouseY;
+        public bool WantDrink;
         
         public PlayerView PlayerView;
     }

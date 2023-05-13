@@ -10,7 +10,6 @@ namespace JamBCD
         public float DashDuration;
         public float BaseSpeedOnGround;
         public float CameraZRot;
-        public float MouseSensitivity;
         public float AirAcceleration; 
         public float DashSpeed;
         public float MaxSpeedInAir;

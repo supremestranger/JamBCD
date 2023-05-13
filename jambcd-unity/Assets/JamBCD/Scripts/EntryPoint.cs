@@ -20,7 +20,8 @@ namespace JamBCD
             _world = new EcsWorld();
             _systems = new EcsSystems(_world);
             var cs = new CameraService(Camera.main);
-            Application.targetFrameRate = 144;
+            var rd = new RuntimeData();
+            Application.targetFrameRate = 144; // remove this
 #if UNITY_EDITOR
             Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(_world);
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_systems);
@@ -28,6 +29,7 @@ namespace JamBCD
             _systems
                 .Add(new PlayerInitSystem())
                 .Add(new PlayerInputSystem())
+                .OneFrame<TryDrink>()
                 .Add(new PlayerAnalyzeInputSystem())
                 .Add(new PlayerGroundCheckSystem())
                 .Add(new CameraLookRotationSystem())
@@ -38,6 +40,8 @@ namespace JamBCD
                 .Add(new PlayerJumpSystem())
                 .Add(new PlayerChangeHeightSystem())
                 .Add(new DrunkCameraShakeSystem())
+                .Add(new PickUpBuffSystem())
+                .OneFrame<PickedUpBuff>()
                 // register your systems here, for example:
                 // .Add (new TestSystem1 ())
                 // .Add (new TestSystem2 ())
@@ -51,6 +55,7 @@ namespace JamBCD
                 // .Inject (new NavMeshSupport ())
                 .Inject(Config)
                 .Inject(SceneData)
+                .Inject(rd)
                 .Inject(cs)
                 .Init();
         }
