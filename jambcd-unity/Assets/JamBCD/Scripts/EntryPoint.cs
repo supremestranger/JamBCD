@@ -39,7 +39,10 @@ namespace JamBCD
                 .Add(new PlayerDashingSystem())
                 .Add(new PlayerJumpSystem())
                 .Add(new PlayerChangeHeightSystem())
-                .Add(new DrunkCameraShakeSystem())
+                .Add(new BuffUseSystem())
+                .Add(new BuffApplySystem())
+                .Add(new DamageSystem())
+                .OneFrame<DamageEvent>()
                 .Add(new PickUpBuffSystem())
                 .OneFrame<PickedUpBuff>()
                 // register your systems here, for example:

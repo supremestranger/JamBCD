@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace JamBCD
 {
-    public class DrunkCameraShakeSystem : IEcsRunSystem
+    public class BuffUseSystem : IEcsRunSystem
     {
         private EcsFilter<TryDrink> _events;
         private RuntimeData _runtimeData;
@@ -17,11 +17,17 @@ namespace JamBCD
             if (!_events.IsEmpty() && _runtimeData.BuffCount > 0)
             {
                 _runtimeData.BuffCount--;
+                foreach (var i in _events)
+                {
+                    ref var e = ref _events.GetEntity(i).Get<ApplyBuff>();
+                    e.RandomValue = Random.Range(0, 101);
+                }
                 _drunk += 5f;
             }
             
             if (_drunk <= 0f)
             {
+                _drunk = 0f;
                 _cameraService.CinemachineNoise.m_AmplitudeGain = 0f;
                 _cameraService.CinemachineNoise.m_FrequencyGain = 0f;
                 return;

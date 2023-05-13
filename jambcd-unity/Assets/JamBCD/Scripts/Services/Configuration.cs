@@ -18,5 +18,6 @@ namespace JamBCD
         public float JumpHeight;
         public float GroundAcceleration;
         public float DashFOV;
+        public float CameraFOVUpdateSpeed;
     }
 }
