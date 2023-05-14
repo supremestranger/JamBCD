@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/JamBCD/Scenes/Level0.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/JamBCD/Scenes/SnowLevel.unity
+    guid: f1aa38095d6d8eb46940111228875c32
+  - enabled: 1
+    path: Assets/JamBCD/Scenes/LevelCountryHouse.unity
+    guid: e0893297d64301c4bae8b058f18dfdf8
   m_configObjects: {}
